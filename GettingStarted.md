@@ -1,0 +1,130 @@
+# Getting Started
+
+This guide will help a user set up the Agentic Coding Workshop repository and use it to introduce various concepts relevant to AI-assisted code development.
+
+## Key Concepts
+- Overall goals and guidelines for coding agents. See `.github/copilot-instuctions.md`
+- Skills: These are more detailed instructions that an agent should use for specific coding tasks. Use skills to define specific task/processing steps for a coding agent. See `.github\skills.md` for an overview of skills included in the repository. Skills can embed/use helper scripts that prescribe exactly how to perform steps, process a specific kind of data file, etc.
+- Subagents: These are specialized agents that you can define to perform specific tasks. Subagents are especially useful for multi-step tasks that require the use of multiple skills. 
+
+## Prerequisites
+
+- **VS Code** (latest version)
+- **GitHub Copilot** extension installed and authenticated
+- **Python 3.12+** (for running Python code in this repo)
+
+## Setup Steps
+
+### 1. Clone and Open the Repository
+
+In a terminal (bash or zsh), open a directory where you want to install the repo. Then:
+
+```bash
+git clone https://github.com/yourusername/Agentic_Coding_Workshop.git
+cd Agentic_Coding_Workshop
+code .
+```
+"code" is the name of the VS Code program. This line tells VS Code to open in the current diretory (`.`).
+
+### 2. Create a Virtual Environment
+
+Create a new Python 3.12+ virtual environment:
+
+```bash
+python3 -m venv venv
+```
+
+Or, if you prefer using `uv` (faster):
+
+```bash
+uv venv myvenv --python 3.13 
+```
+This will install a virtual environment called "myvenv" (change to whatever you want) and locally install the indicated version of python. (Note that uv does not automatically install pip.)
+
+### 3. Activate the Virtual Environment
+
+```bash
+source myvenv/bin/activate
+```
+
+On Windows:
+```bash
+myvenv\Scripts\activate
+```
+
+#### Check environment:
+
+Check your version of python: 
+```bash
+which python
+```
+Generally, you should see the a path to an installation of python specific to the local environment. For example, I see:
+`<full path to my project dir>/Agentic_Coding_Workshop/codagwksp/bin/python` (where codagwksp is the name of my virtual env.)
+
+
+### 4. Install Dependencies
+
+Install required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+OR (if using uv)
+
+```bash
+uv pip install -r requirements.txt
+```
+
+### 5. Configure VS Code
+
+- Open VS Code if not already open
+- Install the **GitHub Copilot** extension from the marketplace
+- Sign in with your GitHub account
+- Copilot will automatically detect the workspace customizations in `.github/` (which is where most of our work will focus in this workshop)
+
+## Using the Workspace
+
+### Copilot Instructions
+
+The `.github/copilot-instructions.md` file provides workspace-level guidance to Copilot. This will automatically be applied to all interactions in this workspace.
+
+### Understanding Skills
+
+Skills are domain-specific workflows stored in `.github/skills/`. Each skill:
+- Contains a `SKILL.md` file with approach and guidelines
+- May include templates, examples, or helper scripts
+- Can be referenced when working on related tasks
+
+To use a skill:
+1. Look for the relevant skill folder in `.github/skills/`
+2. Read the `SKILL.md` file for guidance
+3. Follow the recommended workflow or best practices
+
+### Working with Agents
+
+Custom agents in `.github/agents/` can be configured for specialized tasks. Check the individual agent files for their specific purposes and capabilities.
+
+## Next Steps
+
+1. Explore the skills in `.github/skills/`
+2. Read individual skill files to understand domain-specific workflows
+3. Start a new Python script or Jupyter notebook to test Copilot assistance
+4. Check the project README for resources and additional documentation
+
+## Troubleshooting
+
+**Copilot not appearing?**
+- Ensure GitHub Copilot is installed and you're signed in
+- Reload VS Code (Cmd+K, Cmd+Q on macOS)
+
+**Virtual environment not activating?**
+- Verify you have Python 3.12+: `python3 --version`
+- Check that the venv was created successfully: `ls venv/bin/python`
+- Try recreating: `rm -rf venv && python3 -m venv venv && source venv/bin/activate`
+
+**Dependencies not installing?**
+- Ensure the virtual environment is activated
+- Run: `pip install --upgrade pip` first if using pip
+- Check `requirements.txt` for syntax errors
+
+Happy coding!
