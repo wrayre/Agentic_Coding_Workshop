@@ -3,8 +3,8 @@
 This guide will help a user set up the Agentic Coding Workshop repository and use it to introduce various concepts relevant to AI-assisted code development.
 
 ## Key Concepts
-- Overall goals and guidelines for coding agents. See `.github/copilot-instuctions.md`
-- Skills: These are more detailed instructions that an agent should use for specific coding tasks. Use skills to define specific task/processing steps for a coding agent. See `.github\skills.md` for an overview of skills included in the repository. Skills can embed/use helper scripts that prescribe exactly how to perform steps, process a specific kind of data file, etc.
+- Overall goals and guidelines for coding agents. See `.github/copilot-instructions.md`
+- Skills: These are more detailed instructions that an agent should use for specific coding tasks. Use skills to define specific task/processing steps for a coding agent. See `SkillsOveriew.md` for an overview of skills included in the repository. Skills can embed/use helper scripts that prescribe exactly how to perform steps, process a specific kind of data file, etc.
 - Subagents: These are specialized agents that you can define to perform specific tasks. Subagents are especially useful for multi-step tasks that require the use of multiple skills. 
 
 ## Prerequisites
@@ -20,11 +20,11 @@ This guide will help a user set up the Agentic Coding Workshop repository and us
 In a terminal (bash or zsh), open a directory where you want to install the repo. Then:
 
 ```bash
-git clone https://github.com/yourusername/Agentic_Coding_Workshop.git
+git clone https://github.com/wrayre/Agentic_Coding_Workshop.git
 cd Agentic_Coding_Workshop
 code .
 ```
-"code" is the name of the VS Code program. This line tells VS Code to open in the current diretory (`.`).
+"code" is the name of the VS Code program. This line tells VS Code to open in the current directory (`.`).
 
 ### 2. Create a Virtual Environment
 
@@ -37,9 +37,9 @@ python3 -m venv venv
 Or, if you prefer using `uv` (faster):
 
 ```bash
-uv venv myvenv --python 3.13 
+uv venv myvenv --python 3.12.9
 ```
-This will install a virtual environment called "myvenv" (change to whatever you want) and locally install the indicated version of python. (Note that uv does not automatically install pip.)
+This command will install a virtual environment called "myvenv" (change to whatever you want) and locally install the indicated version of python. (Note that uv does not automatically install pip.)
 
 ### 3. Activate the Virtual Environment
 

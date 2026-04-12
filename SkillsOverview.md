@@ -34,8 +34,6 @@ Skills are located in `.github/skills/`. Current skills include:
 
 ### Presentations & Documentation
 
-- **Scientific Slides** — Build slide decks and presentations for research talks. Provides slide structure, design templates, timing guidance, and visual validation. Works with PowerPoint and LaTeX Beamer.
-
 - **PPTX** — Comprehensive PowerPoint skill for creating, reading, editing, or modifying presentations. Use for decks, pitch presentations, extracting content, or working with templates and layouts.
 
 ### Specialized Tools
