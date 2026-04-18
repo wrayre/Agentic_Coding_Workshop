@@ -6,7 +6,7 @@ Welcome to the Agentic Coding Workshop repository. This project is set up for ag
 
 This repository demonstrates best practices for:
 - Using GitHub Copilot in VS Code for code generation and assistance
-- Organizing skills and agents for specialized workflows
+- Organizing [Skills](GLOSSARY.md#using-coding-models) and [Agents](GLOSSARY.md#using-coding-models) for specialized workflows
 - Collaborating with AI-powered coding tools
 
 ## Quick Start
@@ -41,7 +41,7 @@ See **[GettingStarted.md](./GettingStarted.md)** for setup instructions and firs
 When adding new skills or agents:
 1. Create a subdirectory under `.github/skills/` or `.github/agents/`
 2. Include a `SKILL.md` or `.agent.md` file with documentation
-3. Update the relevant instructions file
+3. Update the relevant [instructions file](GLOSSARY.md#prompting-retrieval-context--instructions)
 
 ## License
 

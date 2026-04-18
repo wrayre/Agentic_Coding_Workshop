@@ -3,9 +3,9 @@
 This guide will help a user set up the Agentic Coding Workshop repository and use it to introduce various concepts relevant to AI-assisted code development.
 
 ## Key Concepts
-- Overall goals and guidelines for coding agents. See `.github/copilot-instructions.md`
-- Skills: These are more detailed instructions that an agent should use for specific coding tasks. Use skills to define specific task/processing steps for a coding agent. See `SkillsOveriew.md` for an overview of skills included in the repository. Skills can embed/use helper scripts that prescribe exactly how to perform steps, process a specific kind of data file, etc.
-- Subagents: These are specialized agents that you can define to perform specific tasks. Subagents are especially useful for multi-step tasks that require the use of multiple skills. 
+- Overall goals and guidelines for [Coding Agents](GLOSSARY.md#using-coding-models). See `.github/copilot-instructions.md`
+- [Skills](GLOSSARY.md#using-coding-models): These are more detailed instructions that an agent should use for specific coding tasks. Use skills to define specific task/processing steps for a coding agent. See `SkillsOveriew.md` for an overview of skills included in the repository. Skills can embed/use helper scripts that prescribe exactly how to perform steps, process a specific kind of data file, etc.
+- [Subagents](GLOSSARY.md#using-coding-models): These are specialized agents that you can define to perform specific tasks. Subagents are especially useful for multi-step tasks that require the use of multiple skills. 
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ git clone https://github.com/wrayre/Agentic_Coding_Workshop.git
 cd Agentic_Coding_Workshop
 code .
 ```
-"code" is the name of the VS Code program. This line tells VS Code to open in the current directory (`.`).
+`code` is the name of the VS Code program. This line tells VS Code to open in the current directory (`.`).
 
 ### 2. Create a Virtual Environment
 
@@ -86,11 +86,11 @@ uv pip install -r requirements.txt
 
 ### Copilot Instructions
 
-The `.github/copilot-instructions.md` file provides workspace-level guidance to Copilot. This will automatically be applied to all interactions in this workspace.
+The `.github/copilot-instructions.md` file provides workspace-level [System Prompt / Instructions](GLOSSARY.md#prompting-retrieval-context--instructions) guidance to Copilot. This will automatically be applied to all interactions in this workspace.
 
 ### Understanding Skills
 
-Skills are domain-specific workflows stored in `.github/skills/`. Each skill:
+[Skills](GLOSSARY.md#using-coding-models) are domain-specific workflows stored in `.github/skills/`. Each skill:
 - Contains a `SKILL.md` file with approach and guidelines
 - May include templates, examples, or helper scripts
 - Can be referenced when working on related tasks
@@ -108,8 +108,8 @@ Custom agents in `.github/agents/` can be configured for specialized tasks. Chec
 
 1. Explore the skills in `.github/skills/`
 2. Read individual skill files to understand domain-specific workflows
-3. Start a new Python script or Jupyter notebook to test Copilot assistance
-4. Check the project README for resources and additional documentation
+3. Check the project README for resources and additional documentation
+4. Ask a coding model to perform EDA on one the data sets in the repository.
 
 ## Troubleshooting
 
