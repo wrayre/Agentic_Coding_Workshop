@@ -1,6 +1,6 @@
-# Agentic Coding Workshop
+# Coding Agent Workshop: Data Analysis
 
-Welcome to the Agentic Coding Workshop repository. This project is set up for agentic coding workflows, leveraging AI-assisted development practices.
+Welcome to the Agentic Coding Workshop repository. This project is set up for to illustate the use of AI-assisted "agentic" development practices, focusing on a data analysis use case. ("Data analysis" spanning EDA to journal-quality figure production.)
 
 ## Overview
 

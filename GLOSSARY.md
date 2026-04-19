@@ -4,13 +4,11 @@ Informal definitions of terms used in the Agentic Coding Workshop tutorial.
 
 ## Models & AI Systems
 
-* **Large Language Model (LLM)** — A neural network trained on large text/code corpora to generate and reason over language and code.
+* **Large Language Model (LLM)** — A neural network trained on large text corpora to generate and reason over language. Training text generally includes natural languages and code.
 
 * **Foundation Model** — A general-purpose, pre-trained model that can be adapted to many tasks with prompting or light tuning.
 
-
-
-* **Coding Model** — A model specialized or optimized for programming tasks (e.g., code generation, debugging, refactoring).
+* **Coding Model** — A model specialized or optimized for programming tasks (e.g., code generation, debugging, refactoring). Conceptually, the training data for a coding model has a much larger ratio of code:NL than a language model does.
 
 * **Multimodal/Vision Language Model** - A model trained on both text/language data and other modalities. Most current frontier models are trained on more than text data.
 
@@ -34,15 +32,17 @@ Informal definitions of terms used in the Agentic Coding Workshop tutorial.
 
 * **Coding Agent** — A system that uses a coding model plus tools and control logic to iteratively write, run, and refine code to complete tasks.
 
+* **Custom Agent** — An coding agent with a more specific set of instructions/goals than the default coding agent. 
+
 * **Copilot Instructions File**  — A configuration file (e.g., in GitHub Copilot) that guides how the model behaves within a repository, including style, constraints, and task framing. (Located in `/.github/copilot-instructions.md`)
 
 * **Tool Use (Function Calling)** — The ability of an agent to invoke external tools (e.g., run code, query data, call APIs).
 
-* **Plan Mode** — A built-in agent that will attempt to decompose a coding task into smaller actions or sub-tasks.
+* **Plan Mode** — A built-in, custom agent that will attempt to decompose a coding task into smaller actions or sub-tasks.
 
-* **Ask Mode** - A built-in coding agent that will answer questions about the coding task, repository, etc.
+* **Ask Mode** - A built-in, custom agent that will answer questions about the coding task, repository, etc.
 
-* **Agent Mode** - A built-in coding agent mode that will perform coding steps, including code creation, test creation, testing, and (to some extent) debugging.
+* **Agent Mode** - A built-in, custom coding agent mode that will perform coding steps, including code creation, test creation, testing, and (to some extent) debugging.
 
 * **Skills** — Reusable, encapsulated capabilities (e.g., “run unit tests,” “parse dataset”) that agents can call.
 
