@@ -27,7 +27,11 @@ load_dotenv()
 # Use environment variables for the model key to avoid hardcoding it in the code
 project_key = os.getenv("OPENAI_API_KEY")
 
-# Define a typed signature for gene-function lookup
+# In DSPy, a Signature is a typed specification of a task's inputs and outputs.
+# The class docstring below serves a dual role: it is human-readable documentation AND
+# becomes the instruction prompt sent to the language model at runtime. The InputField
+# and OutputField descriptors define the structured I/O schema DSPy uses to parse the
+# model's response into typed Python attributes.
 class GeneFunctionQA(dspy.Signature):
     """Given a human biological function, use Wikipedia search results to identify the gene most
     associated with it. First, search Wikipedia and then reason over the results. 
@@ -64,7 +68,8 @@ _WIKI_API = "https://en.wikipedia.org/w/api.php"
 _WIKI_HEADERS = {"User-Agent": "DSPyExploration/1.0 (gene-function research; github.com/DSPyExploration)"}
 
 
-# Define a simple search tool
+# Define a simple search tool. This is the tool our ReAct agent will use to gather information about the biological function. 
+# It queries Wikipedia and returns relevant text extracts.
 def search(query: str) -> str:
     """Search Wikipedia for information about a gene or biological function.
 
@@ -127,14 +132,25 @@ def search(query: str) -> str:
         return f"NO_RESULTS: Search failed ({e}). Do not guess; set found=False."
 
 
-# Configure DSPy with the project key and nano model
+# Configure DSPy with the language model to use for all LM calls in this program.
 start = time.time()
+
+# This sets the specific model to use.
+# You must use a model that is matched to your API key. If you use an incompatible model, you may get authentication errors or other issues.
+# Replace "openai/gpt-5.4-nano" with a valid model name for your API key (which can be other model families and/or models).
+# You will need to use a model that supports at least 2000 tokens of context to run this code,
+# because the search tool can return long text.
 dspy.configure(lm=dspy.LM("openai/gpt-5.4-nano", api_key=project_key))
 if track_timing:   
     print(f"Time to configure DSPy: {time.time() - start:.2f} seconds")
 
 # Create a ReAct agent with the search tool
 start = time.time()
+
+# This is where we define the ReAct agent. We specify the signature (the input/output structure), the tools it can use
+# (in this case, just the search function), and the maximum number of iterations it can take to arrive at an answer.
+# Each iteration consists of one "Thought" (the model's reasoning step) followed by one "Action" (a tool call).
+# With max_iters=5 the agent can make up to 5 Wikipedia searches before it must produce a final structured answer.
 agent = dspy.ReAct(
     signature=GeneFunctionQA,
     tools=[search],
@@ -155,6 +171,9 @@ for biological_function in questions:
     start = time.time()
     print("\n--- Gene Function Lookup ---")
     print(f"Biological function: {biological_function}")
+    # Calling the agent triggers the full ReAct loop: the model alternates between
+    # reasoning ("Thought") and tool calls ("Action") until it generates a final
+    # structured response that matches the GeneFunctionQA output schema.
     result = agent(biological_function=biological_function)
     if track_timing:
         print(f"Time to run ReAct agent: {time.time() - start:.2f} seconds")   
