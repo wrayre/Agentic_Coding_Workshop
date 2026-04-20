@@ -1,0 +1,6 @@
+Subcutaneous adipose gene expression from men in the METSIM cohort
+==================================================
+Citation: 
+- El-Sayed Moustafa JS, Jackson AU, Brotman SM, Guan L et al. ACE2 expression in adipose tissue is associated with COVID-19 cardio-metabolic risk factors and cell type composition. medRxiv 2020 Aug 14. PMID: 32817962
+- El-Sayed Moustafa JS, Jackson AU, Brotman SM, Guan L et al. ACE2 expression in adipose tissue is associated with cardio-metabolic risk factors and cell type composition-implications for COVID-19. Int J Obes (Lond) 2022 Aug;46(8):1478-1486. PMID: 35589964
+Source: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135134
