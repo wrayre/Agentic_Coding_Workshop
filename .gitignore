@@ -1,3 +1,6 @@
+# Large data files (too large for GitHub)
+data/GSE135134/GSE135134_METSIM_subcutaneousAdipose_RNAseq_TPMs_n434.txt
+
 # Virtual Environments
 codagwksp/
 venv/
