@@ -25,7 +25,7 @@ load_dotenv()
 # You can set this in a .env file in the same directory with a line like:
 # OPENAI_API_KEY=sk-abc123...
 # Use environment variables for the model key to avoid hardcoding it in the code
-project_key = os.getenv("OPENAI_API_KEY_DSPY_CTS_CALM")
+project_key = os.getenv("OPENAI_API_KEY")
 
 # Define a typed signature for gene-function lookup
 class GeneFunctionQA(dspy.Signature):
